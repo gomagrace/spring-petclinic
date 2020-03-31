@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.epam_labs.grace</groupId>
-  <artifactId>LessonTwoPetClinic</artifactId>
+  <artifactId>JenkinsLessonJobB</artifactId>
   <version>2.2.0.BUILD-SNAPSHOT</version>
 
   <parent>
@@ -326,9 +326,11 @@
  
   <distributionManagement>
      <snapshotRepository>
+        <uniqueVersion>true</uniqueVersion>
 	<id>epam.labs.snapshots</id>
         <name>EPAM labs repository</name>
-	<url>https://jfrog.ukrtux.com:443/artifactory/petclinic/</url>	    
+	<url>https://jfrog.ukrtux.com/artifactory/petclinic/</url>
+        <layout>default</layout>	
      </snapshotRepository>
   </distributionManagement>
 
