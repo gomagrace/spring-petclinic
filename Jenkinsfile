@@ -1,9 +1,12 @@
+
 pipeline {
     agent {label 'master'}
     stages {
         stage ('Clone') {
             steps {
+
                 git branch: 'dev', url: "https://github.com/gomagrace/spring-petclinic.git"
+
             }
         }
 

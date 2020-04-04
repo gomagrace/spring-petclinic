@@ -326,9 +326,11 @@
  
   <distributionManagement>
      <snapshotRepository>
-	<id>epam.labs.snapshots</id>
+        <uniqueVersion>true</uniqueVersion>
+	      <id>epam.labs.snapshots</id>
         <name>EPAM labs repository</name>
-	<url>https://jfrog.ukrtux.com:443/artifactory/petclinic/</url>	    
+	     <url>https://jfrog.ukrtux.com/artifactory/petclinic/</url>
+        <layout>default</layout>	
      </snapshotRepository>
   </distributionManagement>
 
