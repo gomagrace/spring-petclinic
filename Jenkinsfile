@@ -13,7 +13,7 @@ pipeline {
                 rtServer (
                     id: "epam.labs.snapshots",
                     url: "https://jfrog.ukrtux.com/artifactory",
-                    credentialsId: Artifactory_key
+                    credentialsId: "Artifactory_key"
                 )
 
                 rtMavenDeployer (
@@ -23,12 +23,6 @@ pipeline {
                     snapshotRepo: "generic-local"
                 )
 
-                rtMavenResolver (
-                    id: "MAVEN_RESOLVER",
-                    serverId: "epam.labs.snapshots",
-                    releaseRepo: "generic-local",
-                    snapshotRepo: "generic-local"
-                )
             }
         }
 
@@ -39,7 +33,6 @@ pipeline {
                     pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER",
-                    resolverId: "MAVEN_RESOLVER"
 
                 )
             }
