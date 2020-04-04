@@ -33,7 +33,7 @@ pipeline {
         stage ('Maven build') {
             steps {
                 rtMavenRun (
-                    tool: Maven 3.6.0, // Tool name from Jenkins configuration
+                    tool: "Maven 3.6.0", // Tool name from Jenkins configuration
                     pom: 'pom.xml',
                     goals: 'clean install',
 
