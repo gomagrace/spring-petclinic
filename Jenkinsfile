@@ -12,7 +12,7 @@ pipeline {
             steps {
                 rtServer (
                     id: "epam.labs.snapshots",
-                    url: https://jfrog.ukrtux.com/artifactory,
+                    url: "https://jfrog.ukrtux.com/artifactory",
                     credentialsId: Artifactory_key
                 )
 
