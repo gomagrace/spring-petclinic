@@ -17,12 +17,14 @@ pipeline {
                 )
 
                 rtMavenDeployer (
+                    id: "MAVEN_DEPLOYER",
                     serverId: "epam.labs.snapshots",
                     releaseRepo: "generic-local",
                     snapshotRepo: "generic-local"
                 )
 
                 rtMavenResolver (
+                    id: "MAVEN_RESOLVER",
                     serverId: "epam.labs.snapshots",
                     releaseRepo: "generic-local",
                     snapshotRepo: "generic-local"
@@ -33,9 +35,11 @@ pipeline {
         stage ('Maven build') {
             steps {
                 rtMavenRun (
-                    tool: "Maven 3.6.0", // Tool name from Jenkins configuration
+                    tool: 'Maven 3.6.0',
                     pom: 'pom.xml',
                     goals: 'clean install',
+                    deployerId: "MAVEN_DEPLOYER",
+                    resolverId: "MAVEN_RESOLVER"
 
                 )
             }
